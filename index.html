@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下剋上ゲーム</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>⚔️下剋上ゲーム⚔️</h1>
+        
+        <div class="game-info">
+            <div class="score">
+                <div class="player-score">
+                    <span class="player-label">足軽 (黒)</span>
+                    <span id="player-score">2</span>
+                </div>
+                <div class="ai-score">
+                    <span class="player-label">殿 (白)</span>
+                    <span id="ai-score">2</span>
+                </div>
+            </div>
+            <div class="current-turn">
+                <span id="turn-indicator">足軽の番でござる</span>
+            </div>
+        </div>
+
+        <div id="game-board" class="board"></div>
+        
+        <div class="game-controls">
+            <button id="restart-btn">新たな謀反</button>
+        </div>
+        
+        <div id="game-message" class="message"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
