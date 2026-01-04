@@ -3,10 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>下剋上ゲーム</title>
+    <title>下剋上ゲーム - 戦国オセロ</title>
+    <meta name="description" content="戦国時代をテーマにしたオセロゲーム。足軽が殿に挑む下剋上の物語。">
+    <meta name="keywords" content="オセロ,リバーシ,戦国,下剋上,ゲーム,AI,ブラウザゲーム">
+    <meta property="og:title" content="下剋上ゲーム - 戦国オセロ">
+    <meta property="og:description" content="戦国時代をテーマにしたオセロゲーム">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- ゲーム開始アニメーション -->
+    <div id="start-animation" class="start-animation">
+        <div class="animation-background"></div>
+        <div class="character-slide">
+            <img src="images/mizoi_action01.jpg" alt="水井" class="character-image">
+        </div>
+    </div>
+
+    <!-- AI 4ターン目アニメーション -->
+    <div id="ai-animation" class="ai-animation" style="display: none;">
+        <div class="ai-animation-background"></div>
+        <div class="ai-character-slide">
+            <img src="images/guchi_action01.jpg" alt="愚痴" class="ai-character-image">
+        </div>
+    </div>
+
+    <!-- AI劣勢アニメーション -->
+    <div id="ai-losing-animation" class="ai-animation" style="display: none;">
+        <div class="ai-animation-background"></div>
+        <div class="ai-character-slide">
+            <img src="images/mizoi_action02.jpg" alt="愚痴劣勢" class="ai-character-image">
+        </div>
+    </div>
+
+    <!-- 終盤AIアニメーション（勝利時） -->
+    <div id="ai-endgame-winning-animation" class="ai-animation" style="display: none;">
+        <div class="ai-animation-background"></div>
+        <div class="ai-character-slide">
+            <img src="images/guchi_action03.jpg" alt="愚痴勝利" class="ai-character-image">
+        </div>
+    </div>
+
+    <!-- 終盤AIアニメーション（劣勢時） -->
+    <div id="ai-endgame-losing-animation" class="ai-animation" style="display: none;">
+        <div class="ai-animation-background"></div>
+        <div class="ai-character-slide">
+            <img src="images/guchi_action02.jpg" alt="愚痴劣勢" class="ai-character-image">
+        </div>
+    </div>
+
+    <!-- プレイヤー勝利アニメーション -->
+    <div id="player-victory-animation" class="start-animation" style="display: none;">
+        <div class="animation-background"></div>
+        <div class="character-slide">
+            <img src="images/mizoi_action03.jpg" alt="水井勝利" class="character-image">
+        </div>
+    </div>
+
+    <!-- AI勝利アニメーション -->
+    <div id="ai-victory-animation" class="ai-animation" style="display: none;">
+        <div class="ai-animation-background"></div>
+        <div class="ai-character-slide">
+            <img src="images/guchi_action04.jpg" alt="愚痴勝利" class="ai-character-image">
+        </div>
+    </div>
+    
+    <!-- プレイヤーパスアニメーション -->
+    <div id="player-pass-animation" class="start-animation" style="display: none;">
+        <div class="animation-background"></div>
+        <div class="character-slide">
+            <img src="images/mizoi_action04.jpg" alt="水井パス" class="character-image">
+        </div>
+    </div>
+
     <div class="game-container">
         <h1>⚔️下剋上ゲーム⚔️</h1>
         
